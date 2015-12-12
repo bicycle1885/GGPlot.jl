@@ -1,5 +1,19 @@
 module GGPlot
 
-# package code goes here
+export
+    ggplot,
+    aes,
+    geom_point
+
+using DataFrames
+using GR
+
+abstract AbstractLayer
+abstract AbstractGeom <: AbstractLayer
+
+include("aes.jl")
+include("plot.jl")
+include("geom_point.jl")
+include("gr_backend.jl")
 
 end # module
